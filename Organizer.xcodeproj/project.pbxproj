@@ -15,6 +15,8 @@
 		3B1D3F371F9A50850000BDF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B1D3F351F9A50850000BDF3 /* LaunchScreen.storyboard */; };
 		3B1D3F3F1F9A5C700000BDF3 /* ShopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1D3F3E1F9A5C700000BDF3 /* ShopVC.swift */; };
 		3B1D3F411F9A5C810000BDF3 /* WorkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1D3F401F9A5C810000BDF3 /* WorkVC.swift */; };
+		3B1D3F431F9A5FB00000BDF3 /* ShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1D3F421F9A5FB00000BDF3 /* ShopCell.swift */; };
+		3B1D3F451F9A70C50000BDF3 /* ItemAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1D3F441F9A70C50000BDF3 /* ItemAddVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		3B1D3F381F9A50850000BDF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B1D3F3E1F9A5C700000BDF3 /* ShopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopVC.swift; sourceTree = "<group>"; };
 		3B1D3F401F9A5C810000BDF3 /* WorkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkVC.swift; sourceTree = "<group>"; };
+		3B1D3F421F9A5FB00000BDF3 /* ShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCell.swift; sourceTree = "<group>"; };
+		3B1D3F441F9A70C50000BDF3 /* ItemAddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAddVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +64,13 @@
 		3B1D3F281F9A50850000BDF3 /* Organizer */ = {
 			isa = PBXGroup;
 			children = (
-				3B1D3F291F9A50850000BDF3 /* AppDelegate.swift */,
 				3B1D3F2B1F9A50850000BDF3 /* ViewController.swift */,
+				3B1D3F291F9A50850000BDF3 /* AppDelegate.swift */,
 				3B1D3F3E1F9A5C700000BDF3 /* ShopVC.swift */,
 				3B1D3F401F9A5C810000BDF3 /* WorkVC.swift */,
 				3B1D3F2D1F9A50850000BDF3 /* Main.storyboard */,
+				3B1D3F441F9A70C50000BDF3 /* ItemAddVC.swift */,
+				3B1D3F421F9A5FB00000BDF3 /* ShopCell.swift */,
 				3B1D3F331F9A50850000BDF3 /* Assets.xcassets */,
 				3B1D3F351F9A50850000BDF3 /* LaunchScreen.storyboard */,
 				3B1D3F381F9A50850000BDF3 /* Info.plist */,
@@ -146,6 +152,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B1D3F2C1F9A50850000BDF3 /* ViewController.swift in Sources */,
+				3B1D3F431F9A5FB00000BDF3 /* ShopCell.swift in Sources */,
+				3B1D3F451F9A70C50000BDF3 /* ItemAddVC.swift in Sources */,
 				3B1D3F321F9A50850000BDF3 /* Organizer.xcdatamodeld in Sources */,
 				3B1D3F3F1F9A5C700000BDF3 /* ShopVC.swift in Sources */,
 				3B1D3F2A1F9A50850000BDF3 /* AppDelegate.swift in Sources */,
