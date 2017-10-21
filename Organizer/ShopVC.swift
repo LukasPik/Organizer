@@ -12,7 +12,7 @@ import CoreData
 class ShopVC: UITableViewController {
 
     var shopArray: [NSManagedObject] = []
-    var context: NSManagedObjectContext = NSManagedObjectContext()
+    var context: NSManagedObjectContext = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.mainQueueConcurrencyType)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -134,18 +134,26 @@ class ShopVC: UITableViewController {
     */
     @IBAction func deleteAll(_ sender: Any) {
         //add alert with confirmation
-        
-        for object in shopArray {
-            context.delete(object)
-        }
-        
-        do {
-            try context.save()
-        } catch let error as NSError {
-            print("Couldnt save \(error)")
-        } catch {
+        let alert = UIAlertController(title: "Please confirm", message: "Do you want to delete all items in list?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (alertAction) in
+            for object in self.shopArray {
+                self.context.delete(object)
+            }
             
-        }
+            do {
+                try self.context.save()
+                self.shopArray.removeAll()
+                self.tableView.reloadData()
+            } catch let error as NSError {
+                print("Couldnt save \(error)")
+            } catch {
+                
+            }
+            
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+   
     }
     
 }

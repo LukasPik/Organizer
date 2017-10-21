@@ -35,6 +35,7 @@ class ItemAddVC: UIViewController {
         do {
             try context.save()
             print("Save")
+            itemText.text = ""
         } catch {
             print("Cannot save new item")
         }
