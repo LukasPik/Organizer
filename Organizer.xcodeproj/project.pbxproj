@@ -17,6 +17,8 @@
 		3B1D3F411F9A5C810000BDF3 /* WorkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1D3F401F9A5C810000BDF3 /* WorkVC.swift */; };
 		3B1D3F431F9A5FB00000BDF3 /* ShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1D3F421F9A5FB00000BDF3 /* ShopCell.swift */; };
 		3B1D3F451F9A70C50000BDF3 /* ItemAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1D3F441F9A70C50000BDF3 /* ItemAddVC.swift */; };
+		3B1D3F471F9B35690000BDF3 /* HoursCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1D3F461F9B35690000BDF3 /* HoursCell.swift */; };
+		3B1D3F491F9B379F0000BDF3 /* DateAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1D3F481F9B379F0000BDF3 /* DateAddVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		3B1D3F401F9A5C810000BDF3 /* WorkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkVC.swift; sourceTree = "<group>"; };
 		3B1D3F421F9A5FB00000BDF3 /* ShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCell.swift; sourceTree = "<group>"; };
 		3B1D3F441F9A70C50000BDF3 /* ItemAddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAddVC.swift; sourceTree = "<group>"; };
+		3B1D3F461F9B35690000BDF3 /* HoursCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursCell.swift; sourceTree = "<group>"; };
+		3B1D3F481F9B379F0000BDF3 /* DateAddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAddVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				3B1D3F3E1F9A5C700000BDF3 /* ShopVC.swift */,
 				3B1D3F401F9A5C810000BDF3 /* WorkVC.swift */,
 				3B1D3F2D1F9A50850000BDF3 /* Main.storyboard */,
+				3B1D3F481F9B379F0000BDF3 /* DateAddVC.swift */,
+				3B1D3F461F9B35690000BDF3 /* HoursCell.swift */,
 				3B1D3F441F9A70C50000BDF3 /* ItemAddVC.swift */,
 				3B1D3F421F9A5FB00000BDF3 /* ShopCell.swift */,
 				3B1D3F331F9A50850000BDF3 /* Assets.xcassets */,
@@ -151,9 +157,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B1D3F491F9B379F0000BDF3 /* DateAddVC.swift in Sources */,
 				3B1D3F2C1F9A50850000BDF3 /* ViewController.swift in Sources */,
 				3B1D3F431F9A5FB00000BDF3 /* ShopCell.swift in Sources */,
 				3B1D3F451F9A70C50000BDF3 /* ItemAddVC.swift in Sources */,
+				3B1D3F471F9B35690000BDF3 /* HoursCell.swift in Sources */,
 				3B1D3F321F9A50850000BDF3 /* Organizer.xcdatamodeld in Sources */,
 				3B1D3F3F1F9A5C700000BDF3 /* ShopVC.swift in Sources */,
 				3B1D3F2A1F9A50850000BDF3 /* AppDelegate.swift in Sources */,

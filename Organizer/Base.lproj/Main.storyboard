@@ -203,13 +203,41 @@
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="BAf-2W-yZs">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkCell" rowHeight="100" id="BAf-2W-yZs" customClass="HoursCell" customModule="Organizer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BAf-2W-yZs" id="gUC-JZ-BF0">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcP-RW-A7b">
+                                            <rect key="frame" x="8" y="48" width="159" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="End" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbI-9M-UhI">
+                                            <rect key="frame" x="192" y="48" width="183" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3DT-CA-YmF">
+                                            <rect key="frame" x="21" y="8" width="342" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="3DT-CA-YmF" id="3Nt-Zo-42H"/>
+                                    <outlet property="endLabel" destination="CbI-9M-UhI" id="mbh-ch-U6U"/>
+                                    <outlet property="startLabel" destination="rcP-RW-A7b" id="oZR-xq-uqH"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -220,12 +248,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lkG-su-K6O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="903" y="760"/>
+            <point key="canvasLocation" x="901.60000000000002" y="759.67016491754134"/>
         </scene>
-        <!--WorkVC-->
+        <!--Date AddVC-->
         <scene sceneID="w4e-V7-1tU">
             <objects>
-                <viewController id="moU-f8-DPp" customClass="WorkVC" customModule="Organizer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="moU-f8-DPp" customClass="DateAddVC" customModule="Organizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tnp-qE-uKy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -236,6 +264,10 @@
                                 <date key="date" timeIntervalSinceReferenceDate="530208834.62287498">
                                     <!--2017-10-20 16:13:54 +0000-->
                                 </date>
+                                <locale key="locale" localeIdentifier="en_PL"/>
+                                <connections>
+                                    <action selector="changeEndDateValue:" destination="moU-f8-DPp" eventType="valueChanged" id="Koy-Hz-3mG"/>
+                                </connections>
                             </datePicker>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="XjI-BT-tpI">
                                 <rect key="frame" x="0.0" y="395" width="375" height="162"/>
@@ -243,6 +275,7 @@
                                 <date key="date" timeIntervalSinceReferenceDate="530208840.83163202">
                                     <!--2017-10-20 16:14:00 +0000-->
                                 </date>
+                                <locale key="locale" localeIdentifier="en_PL"/>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etG-Zv-8Ok">
                                 <rect key="frame" x="16" y="113" width="43" height="21"/>
@@ -262,11 +295,17 @@
                                 <rect key="frame" x="56" y="617" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveNewDate:" destination="moU-f8-DPp" eventType="touchUpInside" id="0Mq-b7-mbg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXk-GF-9yQ">
                                 <rect key="frame" x="289" y="617" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="CWO-bB-RBR" kind="show" id="zsp-9z-8aX"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select date when you will be working" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8y-MX-oFq">
                                 <rect key="frame" x="16" y="42" width="343" height="55"/>
@@ -279,6 +318,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="DjO-Xa-wDB"/>
                     </view>
+                    <connections>
+                        <outlet property="endDate" destination="XjI-BT-tpI" id="ISF-Nh-ZZW"/>
+                        <outlet property="startDate" destination="sWD-Pr-4pn" id="yTQ-G0-Jii"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="azk-FI-IqO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -286,8 +329,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3Ud-3p-soS"/>
-        <segue reference="1vt-Hp-24J"/>
-        <segue reference="5aW-eG-K9U"/>
+        <segue reference="AZj-Cb-4a9"/>
+        <segue reference="zsp-9z-8aX"/>
+        <segue reference="gzb-9y-7jr"/>
     </inferredMetricsTieBreakers>
 </document>
