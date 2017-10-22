@@ -13,13 +13,6 @@ class WorkVC: UITableViewController {
 
     var dateArray: [NSManagedObject] = []
     
-    
-    func getContext() -> NSManagedObjectContext {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
-        return appDelegate.persistentContainer.viewContext
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,15 +39,12 @@ class WorkVC: UITableViewController {
         var todayDate: String = String(describing: Date()).components(separatedBy: "-")[2].components(separatedBy: " ")[0]
         
         todayDate += "-" + Date().description.components(separatedBy: "-")[1]
-        print(todayDate)
-        if dateArray.count > 0 {
-            print((dateArray[0].value(forKey: "date") as! String).reversed())
-        }
+
         var row = 0;
         for obj in dateArray {
             let dateArr = (obj.value(forKey: "date") as! String).components(separatedBy: "-")
             let objDate = String("\(dateArr[2])-\(dateArr[1])")
-            print(objDate)
+
             if objDate < todayDate {
                 let context = getContext()
                 context.delete(obj)
@@ -69,12 +59,7 @@ class WorkVC: UITableViewController {
             }
             row += 1
         }
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+ 
         tableView.rowHeight = 100
         tableView.reloadData()
     }
@@ -114,15 +99,6 @@ class WorkVC: UITableViewController {
 
         return cell
     }
- 
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
 
     
     // Override to support editing the table view.
@@ -145,30 +121,5 @@ class WorkVC: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
- 
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }

@@ -25,17 +25,7 @@ class DateAddVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     @IBAction func changeEndDateValue(_ sender: Any) {
         let timeInterval = 3600.0 * 8.0
         endDate.date = startDate.date.addingTimeInterval(timeInterval)
@@ -60,9 +50,5 @@ class DateAddVC: UIViewController {
         } catch {
             print("couldn't save new date")
         }
-    }
-    func getContext() -> NSManagedObjectContext {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        return appDelegate.persistentContainer.viewContext
     }
 }
