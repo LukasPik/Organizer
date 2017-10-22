@@ -43,8 +43,33 @@ class WorkVC: UITableViewController {
             // error handling
         }
         
+        var todayDate: String = String(describing: Date()).components(separatedBy: "-")[2].components(separatedBy: " ")[0]
         
-
+        todayDate += "-" + Date().description.components(separatedBy: "-")[1]
+        print(todayDate)
+        if dateArray.count > 0 {
+            print((dateArray[0].value(forKey: "date") as! String).reversed())
+        }
+        var row = 0;
+        for obj in dateArray {
+            let dateArr = (obj.value(forKey: "date") as! String).components(separatedBy: "-")
+            let objDate = String("\(dateArr[2])-\(dateArr[1])")
+            print(objDate)
+            if objDate < todayDate {
+                let context = getContext()
+                context.delete(obj)
+                
+                do {
+                    try context.save()
+                    dateArray.remove(at: row)
+                    row -= 1
+                } catch {
+                    //error handling
+                }
+            }
+            row += 1
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
