@@ -36,9 +36,9 @@ class DateAddVC: UIViewController {
         let context = getContext()
         let newDate = NSEntityDescription.insertNewObject(forEntityName: "WorkList", into: context)
         
-        let start = startDate.date.description
+        let start = (startDate.date.addingTimeInterval(3600*2)).description
         let startArr = start.components(separatedBy: " ")
-        let end = endDate.date.description
+        let end = (endDate.date.addingTimeInterval(3600*2)).description
         let endArr = end.components(separatedBy: " ")
         
         newDate.setValue(startArr[0], forKey: "date")
