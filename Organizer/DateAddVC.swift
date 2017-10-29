@@ -17,13 +17,12 @@ class DateAddVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let timeInterval = 3600.0 * 8.0
+        endDate.date = startDate.date.addingTimeInterval(timeInterval)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     @IBAction func changeEndDateValue(_ sender: Any) {
@@ -36,9 +35,10 @@ class DateAddVC: UIViewController {
         let context = getContext()
         let newDate = NSEntityDescription.insertNewObject(forEntityName: "WorkList", into: context)
         
-        let start = (startDate.date.addingTimeInterval(3600*2)).description
+        let secondsFromTimezone = TimeZone.current.secondsFromGMT()
+        let start = (startDate.date.addingTimeInterval(TimeInterval(secondsFromTimezone))).description
         let startArr = start.components(separatedBy: " ")
-        let end = (endDate.date.addingTimeInterval(3600*2)).description
+        let end = (endDate.date.addingTimeInterval(TimeInterval(secondsFromTimezone))).description
         let endArr = end.components(separatedBy: " ")
         
         newDate.setValue(startArr[0], forKey: "date")
